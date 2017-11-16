@@ -12,6 +12,9 @@
 		004F4F451FBDF320004D0BED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004F4F431FBDF320004D0BED /* Main.storyboard */; };
 		004F4F471FBDF320004D0BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004F4F461FBDF320004D0BED /* Assets.xcassets */; };
 		004F4F4A1FBDF320004D0BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004F4F481FBDF320004D0BED /* LaunchScreen.storyboard */; };
+		004F4F571FBDF390004D0BED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004F4F561FBDF390004D0BED /* Constants.swift */; };
+		00A378A01FBDF75E00741A86 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A3789F1FBDF75E00741A86 /* DataService.swift */; };
+		47870E275A0827CCCD3EB8C4 /* Pods_AFPokeApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2F93CEB79A57F8378DAD92 /* Pods_AFPokeApi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,12 @@
 		004F4F461FBDF320004D0BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		004F4F491FBDF320004D0BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		004F4F4B1FBDF320004D0BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		004F4F561FBDF390004D0BED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		00A3789E1FBDF56900741A86 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		00A3789F1FBDF75E00741A86 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		278907FDBB12CCBE145181EC /* Pods-AFPokeApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFPokeApi.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFPokeApi/Pods-AFPokeApi.release.xcconfig"; sourceTree = "<group>"; };
+		A54E4FA27C1B73088838B9DE /* Pods-AFPokeApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFPokeApi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFPokeApi/Pods-AFPokeApi.debug.xcconfig"; sourceTree = "<group>"; };
+		AD2F93CEB79A57F8378DAD92 /* Pods_AFPokeApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFPokeApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47870E275A0827CCCD3EB8C4 /* Pods_AFPokeApi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +50,8 @@
 			children = (
 				004F4F3E1FBDF320004D0BED /* AFPokeApi */,
 				004F4F3D1FBDF320004D0BED /* Products */,
+				FEDE1C5555CC45C942291316 /* Pods */,
+				0F3A02D0945F422B05A7F052 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +66,12 @@
 		004F4F3E1FBDF320004D0BED /* AFPokeApi */ = {
 			isa = PBXGroup;
 			children = (
+				00A3789D1FBDF4A200741A86 /* SupportingFiles */,
+				004F4F551FBDF382004D0BED /* Utilities */,
+				004F4F541FBDF37B004D0BED /* Services */,
+				004F4F531FBDF374004D0BED /* Model */,
+				004F4F521FBDF36E004D0BED /* View */,
+				004F4F511FBDF365004D0BED /* Controller */,
 				004F4F3F1FBDF320004D0BED /* AppDelegate.swift */,
 				004F4F411FBDF320004D0BED /* ViewController.swift */,
 				004F4F431FBDF320004D0BED /* Main.storyboard */,
@@ -64,6 +82,68 @@
 			path = AFPokeApi;
 			sourceTree = "<group>";
 		};
+		004F4F511FBDF365004D0BED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		004F4F521FBDF36E004D0BED /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		004F4F531FBDF374004D0BED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		004F4F541FBDF37B004D0BED /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				00A3789F1FBDF75E00741A86 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		004F4F551FBDF382004D0BED /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				004F4F561FBDF390004D0BED /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		00A3789D1FBDF4A200741A86 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				00A3789E1FBDF56900741A86 /* BridgingHeader.h */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		0F3A02D0945F422B05A7F052 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD2F93CEB79A57F8378DAD92 /* Pods_AFPokeApi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEDE1C5555CC45C942291316 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A54E4FA27C1B73088838B9DE /* Pods-AFPokeApi.debug.xcconfig */,
+				278907FDBB12CCBE145181EC /* Pods-AFPokeApi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +151,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 004F4F4E1FBDF320004D0BED /* Build configuration list for PBXNativeTarget "AFPokeApi" */;
 			buildPhases = (
+				520CC14644C1D92D8F75D845 /* [CP] Check Pods Manifest.lock */,
 				004F4F381FBDF320004D0BED /* Sources */,
 				004F4F391FBDF320004D0BED /* Frameworks */,
 				004F4F3A1FBDF320004D0BED /* Resources */,
+				20ED9297572902558F128989 /* [CP] Embed Pods Frameworks */,
+				CADF543A44626C546DA308CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +214,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20ED9297572902558F128989 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AFPokeApi/Pods-AFPokeApi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AFPokeApi/Pods-AFPokeApi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		520CC14644C1D92D8F75D845 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AFPokeApi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CADF543A44626C546DA308CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AFPokeApi/Pods-AFPokeApi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		004F4F381FBDF320004D0BED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -138,6 +281,8 @@
 			files = (
 				004F4F421FBDF320004D0BED /* ViewController.swift in Sources */,
 				004F4F401FBDF320004D0BED /* AppDelegate.swift in Sources */,
+				004F4F571FBDF390004D0BED /* Constants.swift in Sources */,
+				00A378A01FBDF75E00741A86 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +417,7 @@
 		};
 		004F4F4F1FBDF320004D0BED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A54E4FA27C1B73088838B9DE /* Pods-AFPokeApi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -280,6 +426,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fiendishcorporation.AFPokeApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = AFPokeApi/SupportingFiles/BridgingHeader.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -287,6 +434,7 @@
 		};
 		004F4F501FBDF320004D0BED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 278907FDBB12CCBE145181EC /* Pods-AFPokeApi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +443,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fiendishcorporation.AFPokeApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = AFPokeApi/SupportingFiles/BridgingHeader.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
