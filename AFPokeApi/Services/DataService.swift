@@ -48,7 +48,8 @@ class DataService {
     func setPokemonData(data: Data)  {
         do {
             let json = try JSON(data: data)
-            pokemonName = json["name"].stringValue
+            //Uses String extension to capitalise first letter of Pokemon
+            pokemonName = json["name"].stringValue.firstUppercased
             
             if pokemonName == "" {
                 pokemonName = "Pokémon Not Found"

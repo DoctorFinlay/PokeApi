@@ -13,6 +13,7 @@
 		004F4F471FBDF320004D0BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004F4F461FBDF320004D0BED /* Assets.xcassets */; };
 		004F4F4A1FBDF320004D0BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004F4F481FBDF320004D0BED /* LaunchScreen.storyboard */; };
 		004F4F571FBDF390004D0BED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004F4F561FBDF390004D0BED /* Constants.swift */; };
+		0087A9261FBE5D5C00523FDF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0087A9251FBE5D5C00523FDF /* Extensions.swift */; };
 		00A378A01FBDF75E00741A86 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A3789F1FBDF75E00741A86 /* DataService.swift */; };
 		47870E275A0827CCCD3EB8C4 /* Pods_AFPokeApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2F93CEB79A57F8378DAD92 /* Pods_AFPokeApi.framework */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		004F4F491FBDF320004D0BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		004F4F4B1FBDF320004D0BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004F4F561FBDF390004D0BED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0087A9251FBE5D5C00523FDF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		00A3789E1FBDF56900741A86 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		00A3789F1FBDF75E00741A86 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		278907FDBB12CCBE145181EC /* Pods-AFPokeApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFPokeApi.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFPokeApi/Pods-AFPokeApi.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				004F4F561FBDF390004D0BED /* Constants.swift */,
+				0087A9251FBE5D5C00523FDF /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0087A9261FBE5D5C00523FDF /* Extensions.swift in Sources */,
 				004F4F421FBDF320004D0BED /* ViewController.swift in Sources */,
 				004F4F401FBDF320004D0BED /* AppDelegate.swift in Sources */,
 				004F4F571FBDF390004D0BED /* Constants.swift in Sources */,
