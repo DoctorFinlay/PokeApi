@@ -77,7 +77,7 @@
                                 <color key="color" red="0.22673895960000001" green="0.17634806040000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iHR-Bl-vZO">
-                                <rect key="frame" x="153.5" y="425.5" width="68" height="110"/>
+                                <rect key="frame" x="153.5" y="425.5" width="68" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IDLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUL-3I-fiy">
                                         <rect key="frame" x="0.0" y="0.0" width="68" height="20"/>
@@ -99,6 +99,12 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kX4-bX-2rB">
                                         <rect key="frame" x="0.0" y="90" width="68" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Types" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKl-we-BV5">
+                                        <rect key="frame" x="0.0" y="120" width="68" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -136,6 +142,7 @@
                         <outlet property="pokemonBaseExpLbl" destination="fg2-Ey-9nL" id="I9d-FP-F4J"/>
                         <outlet property="pokemonIdLbl" destination="WUL-3I-fiy" id="Rc8-6e-txc"/>
                         <outlet property="pokemonNameLbl" destination="nVk-Tk-df7" id="xrE-48-cUk"/>
+                        <outlet property="pokemonTypesLbl" destination="gKl-we-BV5" id="fZd-Bw-tSp"/>
                         <outlet property="pokemonWeightLbl" destination="9DY-gL-5Zq" id="F9h-Ra-jLy"/>
                         <outlet property="spinner" destination="oB5-Oe-8LZ" id="qtW-0u-qLd"/>
                     </connections>

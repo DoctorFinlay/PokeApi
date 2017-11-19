@@ -16,6 +16,7 @@ class Pokemon {
     var pokemonWeight = 1
     var pokemonBaseExperience = 1
     var pokemonTypes = [String]()
+    var pokemonAbilities = [String]()
 
     
     

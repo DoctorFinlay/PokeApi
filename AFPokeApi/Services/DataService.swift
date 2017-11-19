@@ -28,6 +28,8 @@ class DataService {
         case name
         case type
         case url
+        case abilities
+        case ability
     }
     
     
@@ -62,13 +64,22 @@ class DataService {
             let pokemonWeight = json["weight"].int
             let pokemonBaseExperience = json["base_experience"].int
             
-            //Clear types from type array
+            //Clear types and abilities from instance arrays
             DataService.instance.currentPokemon.pokemonTypes.removeAll()
-            //This gets an array of the values for "name", stored within "types" then "type"
-            let typesArray = json["types"].arrayValue.map({$0["type"]["name"].stringValue})
+            DataService.instance.currentPokemon.pokemonAbilities.removeAll()
+            //Get an array of the values for "name", stored within "types" then "type"
+            
+            let typesArray = json[pokemonApiParameterKeys.types.rawValue].arrayValue.map {$0[pokemonApiParameterKeys.type.rawValue][pokemonApiParameterKeys.name.rawValue].stringValue}
+//     The above can be written as below - the below line doesn't use the enum with the api parameter keys so not best practice
+//            let typesArray = json["types"].arrayValue.map({$0["type"]["name"].stringValue})
             for item in typesArray {
                 self.currentPokemon.pokemonTypes.append(item.firstUppercased)
-                print("Added \(item)")
+            }
+            
+            //Doing the same thing, this time for abilities which is nested in the same way
+            let abilitiesArray = json[pokemonApiParameterKeys.abilities.rawValue].arrayValue.map{$0[pokemonApiParameterKeys.ability.rawValue][pokemonApiParameterKeys.name.rawValue].stringValue}
+            for ability in abilitiesArray {
+                self.currentPokemon.pokemonAbilities.append(ability.firstUppercased)
             }
  
             self.currentPokemon.pokemonName = pokemonName

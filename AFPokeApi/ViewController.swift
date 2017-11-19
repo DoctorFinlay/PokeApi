@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var pokemonWeightLbl: UILabel!
     @IBOutlet weak var pokemonBaseExpLbl: UILabel!
     @IBOutlet weak var pokemonAbilitiesLbl: UILabel!
+    @IBOutlet weak var pokemonTypesLbl: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -42,11 +43,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         pokemonWeightLbl.isHidden = true
         pokemonBaseExpLbl.isHidden = true
         pokemonAbilitiesLbl.isHidden = true
+        pokemonTypesLbl.isHidden = true
         
     }
   
     func textFieldDidBeginEditing(_ textField: UITextField) {
         goButton.isEnabled = true
+        image.isHidden = true
+        pokemonNameLbl.isHidden = true
+        pokemonIdLbl.isHidden = true
+        pokemonWeightLbl.isHidden = true
+        pokemonBaseExpLbl.isHidden = true
+        pokemonAbilitiesLbl.isHidden = true
+        pokemonTypesLbl.isHidden = true
     }
     
 
@@ -88,15 +97,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
         pokemonWeightLbl.text = "Weight: \(DataService.instance.currentPokemon.pokemonWeight)kg"
         pokemonBaseExpLbl.text = "Base Experience: \(DataService.instance.currentPokemon.pokemonBaseExperience)"
         var abilitiesJoined = ""
-        abilitiesJoined = DataService.instance.currentPokemon.pokemonTypes.joined(separator: ", ")
+        abilitiesJoined = DataService.instance.currentPokemon.pokemonAbilities.joined(separator: ", ")
+        if DataService.instance.currentPokemon.pokemonAbilities.count > 1 {
         pokemonAbilitiesLbl.text = "Abilities: \(abilitiesJoined)"
-        
+        } else {
+            pokemonAbilitiesLbl.text = "Ability: \(abilitiesJoined)"
+        }
+        var typesJoined = ""
+        typesJoined = DataService.instance.currentPokemon.pokemonTypes.joined(separator: ", ")
+        if DataService.instance.currentPokemon.pokemonTypes.count > 1 {
+            pokemonTypesLbl.text = "Types: \(typesJoined)"
+        } else {
+            pokemonTypesLbl.text = "Type: \(typesJoined)"
+        }
         pokemonNameLbl.isHidden = false
         pokemonIdLbl.isHidden = false
         pokemonWeightLbl.isHidden = false
         pokemonBaseExpLbl.isHidden = false
         pokemonAbilitiesLbl.isHidden = false
-        
+        pokemonTypesLbl.isHidden = false
+        image.isHidden = false
     }
   
     
