@@ -14,5 +14,5 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 
 //URL Constants
 let BASE_URL = "https://pokeapi.co/"
-let DATA_URL = "\(BASE_URL)api/v2/pokemon/"
+let DATA_URL = "\(BASE_URL)api/v2/pokemon/"  //This by itself lists all pokemon, including giving us a "count"
 let IMAGE_URL = "\(BASE_URL)media/sprites/pokemon/"
