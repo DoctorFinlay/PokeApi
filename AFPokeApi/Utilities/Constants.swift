@@ -16,3 +16,9 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 let BASE_URL = "https://pokeapi.co/"
 let DATA_URL = "\(BASE_URL)api/v2/pokemon/"  //This by itself lists all pokemon, including giving us a "count"
 let IMAGE_URL = "\(BASE_URL)media/sprites/pokemon/"
+let POKEMON_150_LIST = "\(BASE_URL)api/v2/pokemon/?limit=150"
+
+// Segues
+
+let TO_FINDER = "toFinder"
+let TO_BROWSE = "toBrowse"

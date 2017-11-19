@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FinderVC.swift
 //  AFPokeApi
 //
 //  Created by Iain Coleman on 16/11/2017.
@@ -10,7 +10,7 @@ import UIKit
 import AFNetworking
 import Kingfisher
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class FinderVC: UIViewController, UITextFieldDelegate {
 
     //Outlets
     @IBOutlet weak var pokeNoTxtField: UITextField!
@@ -58,7 +58,44 @@ class ViewController: UIViewController, UITextFieldDelegate {
         pokemonTypesLbl.isHidden = true
     }
     
+    
+    func populateOutlets() {
+        pokemonNameLbl.text = DataService.instance.currentPokemon.pokemonName
+        var pokedexIdAsThreeDigitString = ""
+        if DataService.instance.currentPokemon.pokemonId < 10 {
+            pokedexIdAsThreeDigitString = "00\(DataService.instance.currentPokemon.pokemonId)"
+        } else if DataService.instance.currentPokemon.pokemonId < 100 {
+            pokedexIdAsThreeDigitString = "0\(DataService.instance.currentPokemon.pokemonId)"
+        } else {
+            pokedexIdAsThreeDigitString = String(DataService.instance.currentPokemon.pokemonId)
+        }
+        pokemonIdLbl.text = "Pokédex ID: #\(pokedexIdAsThreeDigitString)"
+        pokemonWeightLbl.text = "Weight: \(DataService.instance.currentPokemon.pokemonWeight)kg"
+        pokemonBaseExpLbl.text = "Base Experience: \(DataService.instance.currentPokemon.pokemonBaseExperience)"
+        var abilitiesJoined = ""
+        abilitiesJoined = DataService.instance.currentPokemon.pokemonAbilities.joined(separator: ", ")
+        if DataService.instance.currentPokemon.pokemonAbilities.count > 1 {
+            pokemonAbilitiesLbl.text = "Abilities: \(abilitiesJoined)"
+        } else {
+            pokemonAbilitiesLbl.text = "Ability: \(abilitiesJoined)"
+        }
+        var typesJoined = ""
+        typesJoined = DataService.instance.currentPokemon.pokemonTypes.joined(separator: ", ")
+        if DataService.instance.currentPokemon.pokemonTypes.count > 1 {
+            pokemonTypesLbl.text = "Types: \(typesJoined)"
+        } else {
+            pokemonTypesLbl.text = "Type: \(typesJoined)"
+        }
+        pokemonNameLbl.isHidden = false
+        pokemonIdLbl.isHidden = false
+        pokemonWeightLbl.isHidden = false
+        pokemonBaseExpLbl.isHidden = false
+        pokemonAbilitiesLbl.isHidden = false
+        pokemonTypesLbl.isHidden = false
+        image.isHidden = false
+    }
 
+    
     @IBAction func goButtonPressed(_ sender: Any) {
         var pokeNumber = 0
         if let checkNumber = pokeNoTxtField.text {
@@ -83,42 +120,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func populateOutlets() {
-        pokemonNameLbl.text = DataService.instance.currentPokemon.pokemonName
-        var pokedexIdAsThreeDigitString = ""
-        if DataService.instance.currentPokemon.pokemonId < 10 {
-            pokedexIdAsThreeDigitString = "00\(DataService.instance.currentPokemon.pokemonId)"
-        } else if DataService.instance.currentPokemon.pokemonId < 100 {
-            pokedexIdAsThreeDigitString = "0\(DataService.instance.currentPokemon.pokemonId)"
-        } else {
-            pokedexIdAsThreeDigitString = String(DataService.instance.currentPokemon.pokemonId)
-        }
-        pokemonIdLbl.text = "Pokédex ID: #\(pokedexIdAsThreeDigitString)"
-        pokemonWeightLbl.text = "Weight: \(DataService.instance.currentPokemon.pokemonWeight)kg"
-        pokemonBaseExpLbl.text = "Base Experience: \(DataService.instance.currentPokemon.pokemonBaseExperience)"
-        var abilitiesJoined = ""
-        abilitiesJoined = DataService.instance.currentPokemon.pokemonAbilities.joined(separator: ", ")
-        if DataService.instance.currentPokemon.pokemonAbilities.count > 1 {
-        pokemonAbilitiesLbl.text = "Abilities: \(abilitiesJoined)"
-        } else {
-            pokemonAbilitiesLbl.text = "Ability: \(abilitiesJoined)"
-        }
-        var typesJoined = ""
-        typesJoined = DataService.instance.currentPokemon.pokemonTypes.joined(separator: ", ")
-        if DataService.instance.currentPokemon.pokemonTypes.count > 1 {
-            pokemonTypesLbl.text = "Types: \(typesJoined)"
-        } else {
-            pokemonTypesLbl.text = "Type: \(typesJoined)"
-        }
-        pokemonNameLbl.isHidden = false
-        pokemonIdLbl.isHidden = false
-        pokemonWeightLbl.isHidden = false
-        pokemonBaseExpLbl.isHidden = false
-        pokemonAbilitiesLbl.isHidden = false
-        pokemonTypesLbl.isHidden = false
-        image.isHidden = false
+    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
-  
+    
     
     
 }

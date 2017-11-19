@@ -19,6 +19,9 @@ class DataService {
     public private(set) var pokemonImageUrl = ""
     public private(set) var pokemonImageView = UIImageView()
     public let currentPokemon = Pokemon()
+    public private(set) var pokemonNamesArray = [String]()
+    
+    var justNamesArray = [String]()
     
     enum pokemonApiParameterKeys: String {
         case id
@@ -30,6 +33,7 @@ class DataService {
         case url
         case abilities
         case ability
+        case results
     }
     
     
@@ -48,10 +52,9 @@ class DataService {
                 debugPrint(response.result.error as Any)
             }
         }
-       
     }
     
-
+    
     func setPokemonData(data: Data)  {
         do {
             let json = try JSON(data: data)
@@ -70,8 +73,8 @@ class DataService {
             //Get an array of the values for "name", stored within "types" then "type"
             
             let typesArray = json[pokemonApiParameterKeys.types.rawValue].arrayValue.map {$0[pokemonApiParameterKeys.type.rawValue][pokemonApiParameterKeys.name.rawValue].stringValue}
-//     The above can be written as below - the below line doesn't use the enum with the api parameter keys so not best practice
-//            let typesArray = json["types"].arrayValue.map({$0["type"]["name"].stringValue})
+            //     The above can be written as below - the below line doesn't use the enum with the api parameter keys so not best practice
+            //            let typesArray = json["types"].arrayValue.map({$0["type"]["name"].stringValue})
             for item in typesArray {
                 self.currentPokemon.pokemonTypes.append(item.firstUppercased)
             }
@@ -81,7 +84,7 @@ class DataService {
             for ability in abilitiesArray {
                 self.currentPokemon.pokemonAbilities.append(ability.firstUppercased)
             }
- 
+            
             self.currentPokemon.pokemonName = pokemonName
             self.currentPokemon.pokemonId = pokemonId!
             self.currentPokemon.pokemonWeight = pokemonWeight!
@@ -91,6 +94,41 @@ class DataService {
         }
     }
     
+    func get150PokemonData(completion: @escaping CompletionHandler) {
+        
+        let url = POKEMON_150_LIST
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                self.set150PokemonAsArray(data: data)
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
     
     
+    func set150PokemonAsArray(data: Data) {
+        do {
+            let json = try JSON(data: data)
+            let namesArray = json[pokemonApiParameterKeys.results.rawValue].arrayValue.map{$0[pokemonApiParameterKeys.name.rawValue].stringValue}
+       
+            for name in namesArray {
+              self.pokemonNamesArray.append(name)
+            }
+            
+            print("Pokemon Names array contains \(pokemonNamesArray.count) items")
+            
+        } catch {
+            print(error)
+        }
+        
+        
+        
+        
+    }
 }
