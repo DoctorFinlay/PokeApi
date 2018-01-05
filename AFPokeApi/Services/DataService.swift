@@ -59,13 +59,13 @@ class DataService {
         do {
             let json = try JSON(data: data)
             //Uses String extension to capitalise first letter of Pokemon
-            var pokemonName = json["name"].stringValue.firstUppercased
+            var pokemonName = json[pokemonApiParameterKeys.name.rawValue].stringValue.firstUppercased
             if pokemonName == "" {
                 pokemonName = "Pokémon Not Found"
             }
-            let pokemonId = json["id"].int
-            let pokemonWeight = json["weight"].int
-            let pokemonBaseExperience = json["base_experience"].int
+            let pokemonId = json[pokemonApiParameterKeys.id.rawValue].int
+            let pokemonWeight = json[pokemonApiParameterKeys.weight.rawValue].int
+            let pokemonBaseExperience = json[pokemonApiParameterKeys.base_experience.rawValue].int
             
             //Clear types and abilities from instance arrays
             DataService.instance.currentPokemon.pokemonTypes.removeAll()
